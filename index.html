@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ROI Calculator - Loopholes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400...800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="calculator-container">
+      <h1>Save tons of money in compliance reviews with Loopholes</h1>
+      <p class="subtitle">
+        Discover how much time and money you can save by automating your
+        marketing compliance with Loopholes.
+      </p>
+
+      <div class="calculator-grid">
+        <div class="calculator-section">
+          <h2>ROI Calculator</h2>
+
+          <div class="input-section manual">
+            <h3>Manual (In-house Legal Team)</h3>
+            <div class="input-content">
+              <div class="input-group">
+                <label>Avg. Time per asset:</label>
+                <div class="input-value">3 hours</div>
+              </div>
+              <div class="input-group">
+                <label>Avg Cost Per Hour (lawyer/compliance officer):</label>
+                <div class="input-value">$350</div>
+              </div>
+              <div class="input-group">
+                <label>Assets reviewed per month:</label>
+                <input
+                  type="number"
+                  id="manualAssetsPerMonth"
+                  value="100"
+                  min="1"
+                  max="10000"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="input-section automated">
+            <h3>Automated (Loopholes AI)</h3>
+            <div class="input-content">
+              <div class="input-group">
+                <label>Avg. Time Per Asset:</label>
+                <div class="input-value">1 minute</div>
+              </div>
+              <div class="input-group">
+                <label>Cost Per Asset (Software License):</label>
+                <div class="input-value">$12.50</div>
+              </div>
+              <div class="input-group">
+                <label>Assets reviewed per month:</label>
+                <input
+                  type="number"
+                  id="assetsPerMonth"
+                  value="100"
+                  min="1"
+                  max="10000"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="cost-comparison">
+            <h3>Monthly Cost Comparison</h3>
+            <div class="comparison-details">
+              <div class="comparison-section">
+                <h4>Manual</h4>
+                <div class="comparison-row">
+                  <span id="manualAssetsCalc">100 assets x 3 hours:</span>
+                  <span class="hours-value">300 hours/month</span>
+                </div>
+                <div class="comparison-row">
+                  <span id="manualHoursCalc">300 hours x $350/hours:</span>
+                  <span class="cost-value manual">$105,000/month</span>
+                </div>
+              </div>
+
+              <div class="comparison-section">
+                <h4>Loopholes AI</h4>
+                <div class="comparison-row">
+                  <span id="automatedAssetsCalc">100 assets x $12.5:</span>
+                  <span class="cost-value automated">$1,250/month</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="results-section">
+          <div class="time-saved">
+            <h2>Time Saved</h2>
+            <div class="metrics-grid">
+              <div class="metric-large">
+                <div class="value" id="timeSavedValue">299.93</div>
+                <div class="unit">hours/month</div>
+              </div>
+              <div class="metric-large">
+                <div class="value" id="timeReductionValue">99.4%</div>
+                <div class="unit">Average</div>
+              </div>
+            </div>
+            <div class="comparison">
+              <span>Manual: <span id="manualTime">300</span> hours/month</span>
+              <span>VS</span>
+              <span
+                >Automated:
+                <span id="automatedTime">1.67</span> hours/month</span
+              >
+            </div>
+          </div>
+
+          <div class="savings">
+            <h2>Savings</h2>
+            <div class="metrics-grid">
+              <div class="metric-large">
+                <div class="value" id="roiValue">8,200%</div>
+                <div class="unit">Average</div>
+              </div>
+              <div class="metric-large">
+                <div class="value" id="savedValue">$103,750</div>
+                <div class="unit">Month Saved</div>
+              </div>
+            </div>
+          </div>
+
+          <button class="demo-button">Start Saving. Schedule Demo</button>
+        </div>
+      </div>
+    </div>
+    <script src="calculator.js"></script>
+  </body>
+</html>
