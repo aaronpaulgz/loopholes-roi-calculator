@@ -56,6 +56,10 @@ h1 {
   background: #f8f8f8;
   padding: 24px;
   border-radius: 32px;
+  align-items: start;
+  background-image: radial-gradient(#e7e7e7 1px, transparent 1px);
+  background-size: 16px 16px;
+  border: 1px solid #e7e7e7;
 }
 
 .calculator-section,
@@ -63,6 +67,11 @@ h1 {
   background: white;
   padding: 24px;
   border-radius: var(--border-radius);
+  border: 1px solid #e7e7e7;
+}
+
+.results-section {
+  height: fit-content;
 }
 
 h2 {
@@ -126,6 +135,19 @@ input[type="number"] {
   border-radius: 8px;
   font-size: 16px;
   text-align: right;
+  -moz-appearance: textfield;
+  direction: ltr;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: #000;
 }
 
 .cost-comparison {

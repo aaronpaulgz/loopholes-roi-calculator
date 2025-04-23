@@ -130,12 +130,10 @@ const updateCalculator = () => {
 
 // Event listeners
 manualAssetsInput.addEventListener("input", () => {
-  automatedAssetsInput.value = manualAssetsInput.value;
   updateCalculator();
 });
 
 automatedAssetsInput.addEventListener("input", () => {
-  manualAssetsInput.value = automatedAssetsInput.value;
   updateCalculator();
 });
 
