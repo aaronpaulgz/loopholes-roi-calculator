@@ -3,7 +3,7 @@
   --secondary-color: #666666;
   --accent-color: #0066ff;
   --background-color: #ffffff;
-  --border-radius: 12px;
+  --border-radius: 16px;
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -90,6 +90,12 @@ h3 {
 
 .input-section {
   margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.input-section:last-of-type {
+  border-bottom: none;
 }
 
 .input-group {
@@ -124,6 +130,7 @@ input[type="number"] {
 
 .cost-comparison {
   margin-bottom: 0px;
+  /* padding-top: 24px; */
 }
 
 /* .comparison-details {
@@ -154,17 +161,17 @@ input[type="number"] {
 .metric-large {
   text-align: left;
   padding: 16px;
-  margin: 1rem 0;
   background-color: #f6f6f6;
   border-radius: 16px;
 }
 
 .metric-title {
   font-family: "Inter", sans-serif;
+  font-weight: 600;
   font-size: 16px;
   line-height: 24px;
   color: var(--primary-color);
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .value {
@@ -176,32 +183,48 @@ input[type="number"] {
 }
 
 .unit {
-  color: var(--secondary-color);
+  color: #6a6a6a;
   margin-top: 0.5rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 .comparison {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #f8f8f8;
   padding: 1rem;
   border-radius: var(--border-radius);
   margin: 1rem 0;
+  font-family: "Inter", sans-serif;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #fdf2f1 0%, #f1f8ea 100%);
+}
+
+.comparison .label {
+  font-weight: 600;
+}
+
+.comparison .value-text {
+  font-weight: 400;
 }
 
 .demo-button {
   width: 100%;
   padding: 1rem;
-  background: var(--accent-color);
   color: white;
   border: none;
   border-radius: var(--border-radius);
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 2rem;
   transition: background-color 0.3s ease;
+  border-radius: 16px;
+  border: 1px solid #5d5d5d;
+  background: linear-gradient(0deg, #000 0%, #454545 100%);
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.24);
 }
 
 .demo-button:hover {
@@ -210,7 +233,16 @@ input[type="number"] {
 
 .time-saved,
 .savings {
-  margin-bottom: 2rem;
+  margin-bottom: 16px;
+}
+
+.savings {
+  margin-bottom: 16px;
+}
+
+.time-saved-title,
+.savings-title {
+  margin-bottom: 16px;
 }
 
 .time-saved .metrics-grid,
@@ -276,4 +308,68 @@ input[type="number"] {
 
 .cost-value.automated {
   color: #46762f;
+}
+
+.ftc-penalties {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e7e7e7;
+}
+
+.ftc-description {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--primary-color);
+  margin: 16px 0;
+}
+
+.slider-container {
+  position: relative;
+  padding: 8px 0;
+}
+
+.slider-with-input {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.slider {
+  flex: 1;
+  height: 4px;
+  background: #e7e7e7;
+  border-radius: 2px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.currency-symbol {
+  position: absolute;
+  left: 12px;
+  color: var(--primary-color);
+  font-family: "Inter", sans-serif;
+}
+
+.ftc-value-input {
+  width: 120px;
+  padding: 8px 8px 8px 24px;
+  border: 1px solid #e7e7e7;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--primary-color);
+  text-align: right;
+}
+
+.ftc-value-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
 }

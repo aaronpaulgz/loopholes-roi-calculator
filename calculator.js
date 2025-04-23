@@ -19,6 +19,10 @@ const manualTotalCost = document.getElementById("manualTotalCost");
 const automatedAssetsCalc = document.getElementById("automatedAssetsCalc");
 const automatedTotalCost = document.getElementById("automatedTotalCost");
 
+// FTC Penalties slider and input sync
+const ftcSlider = document.getElementById("ftcSlider");
+const ftcValue = document.getElementById("ftcValue");
+
 // Utility functions
 const formatNumber = (number) => {
   return new Intl.NumberFormat("en-US", {
@@ -35,6 +39,20 @@ const formatCurrency = (amount) => {
     maximumFractionDigits: 0,
   }).format(amount);
 };
+
+function formatFTCValue(value) {
+  return new Intl.NumberFormat("en-US", {
+    style: "decimal",
+    maximumFractionDigits: 0,
+  }).format(value);
+}
+
+function calculateSliderValue(sliderPosition) {
+  // Base value is 1000 (representing $1,000)
+  const baseValue = 1000;
+  // Calculate exponential growth based on slider position (0-100)
+  return Math.round(baseValue * sliderPosition);
+}
 
 // Calculation functions
 const calculateManualTime = (assets) => {
@@ -120,6 +138,23 @@ automatedAssetsInput.addEventListener("input", () => {
   manualAssetsInput.value = automatedAssetsInput.value;
   updateCalculator();
 });
+
+ftcSlider.addEventListener("input", (e) => {
+  const sliderValue = parseInt(e.target.value);
+  ftcValue.value = sliderValue;
+});
+
+ftcValue.addEventListener("input", (e) => {
+  let value = parseInt(e.target.value.replace(/,/g, ""));
+  if (isNaN(value)) value = 1;
+  if (value < 1) value = 1;
+  if (value > 100) value = 100;
+  ftcSlider.value = value;
+  ftcValue.value = value;
+});
+
+// Initialize with default value
+ftcValue.value = 1;
 
 // Initialize calculator with default values
 updateCalculator();
