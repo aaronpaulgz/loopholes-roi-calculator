@@ -300,6 +300,21 @@ input[type="number"]:focus {
   h1 {
     font-size: 2rem;
   }
+
+  .results-section {
+    order: -1;
+  }
+
+  .time-saved .metrics-grid,
+  .savings .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
 }
 
 .comparison-section {
