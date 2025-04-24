@@ -68,6 +68,7 @@ h1 {
   padding: 24px;
   border-radius: var(--border-radius);
   border: 1px solid #e7e7e7;
+  min-width: 0;
 }
 
 .results-section {
@@ -185,6 +186,7 @@ input[type="number"]:focus {
   padding: 16px;
   background-color: #f6f6f6;
   border-radius: 16px;
+  min-width: 0;
 }
 
 .metric-title {
@@ -199,9 +201,16 @@ input[type="number"]:focus {
 .value {
   font-family: "Syne", sans-serif;
   font-weight: 600;
-  font-size: 48px;
+  font-size: 40px;
   line-height: 120%;
   color: var(--primary-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#timeSavedValue {
+  font-size: 40px;
 }
 
 .unit {
