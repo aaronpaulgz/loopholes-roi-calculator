@@ -120,12 +120,23 @@ const updateCalculator = () => {
   roiValue.textContent = formatNumber(roi) + "%";
   savedValue.textContent = formatCurrency(monthlySavings);
 
-  // Update calculations display
-  manualAssetsCalc.textContent = `${manualAssets} assets x ${MANUAL_TIME_PER_ASSET} hours`;
+  // Update cost comparison display
+  manualAssetsCalc.textContent = `${manualAssets} assets x ${MANUAL_TIME_PER_ASSET} hours:`;
   manualHoursCalc.textContent = `${formatNumber(
     manualTimeValue
-  )} hours x ${formatCurrency(MANUAL_COST_PER_HOUR)}/hours`;
-  automatedAssetsCalc.textContent = `${automatedAssets} assets $${AUTOMATED_COST_PER_ASSET}`;
+  )} hours x ${formatCurrency(MANUAL_COST_PER_HOUR)}/hours:`;
+  automatedAssetsCalc.textContent = `${automatedAssets} assets x ${formatCurrency(
+    AUTOMATED_COST_PER_ASSET
+  )}:`;
+
+  // Update cost values
+  document.querySelector(".hours-value").textContent = `${formatNumber(
+    manualTimeValue
+  )} hours/month`;
+  document.querySelector(".cost-value.manual").textContent =
+    formatCurrency(manualCostValue) + "/month";
+  document.querySelector(".cost-value.automated").textContent =
+    formatCurrency(automatedCostValue) + "/month";
 };
 
 // Event listeners
