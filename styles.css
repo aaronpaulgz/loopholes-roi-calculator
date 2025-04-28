@@ -224,22 +224,56 @@ input[type="number"]:focus {
 
 .comparison {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 8px;
   padding: 1rem;
   border-radius: var(--border-radius);
   margin: 1rem 0;
   font-family: "Inter", sans-serif;
   border-radius: 16px;
-  background: linear-gradient(90deg, #fdf2f1 0%, #f1f8ea 100%);
+  background: #f6f6f6;
+}
+
+.comparison > span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comparison > span:nth-child(2) {
+  align-self: center;
+  margin: 4px 0;
 }
 
 .comparison .label {
   font-weight: 600;
+  text-align: left;
 }
 
 .comparison .value-text {
   font-weight: 400;
+  text-align: right;
+}
+
+.comparison > span:first-child,
+.comparison > span:last-child {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.comparison > span:first-child > span,
+.comparison > span:last-child > span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.comparison .value-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-align: right;
 }
 
 .demo-button {
